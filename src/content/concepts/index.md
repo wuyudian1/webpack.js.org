@@ -115,7 +115,7 @@ module.exports = {
 
 以上配置中，对一个单独的 module 对象定义了 `rules` 属性，里面包含两个必须属性：`test` 和 `use`。这告诉 webpack 编译器(compiler) 如下信息：
 
-> “嘿，webpack 编译器，当你碰到「在 `require()`/`import` 语句中被解析为 '.txt' 的路径」时，在你对它打包之前，先 __使用__ `raw-loader` 转换一下。”
+> “嘿，webpack 编译器，当你在`require()` 或者 `import` 申明中遇到指向'.txt'文件的路径时，先用`raw-loader` 将其转换一下，再将其（转换结果）添加到bundle 中。”
 
 W> 重要的是要记住，在 webpack 配置中定义 rules 时，要定义在 `module.rules` 而不是 `rules` 中。为了使你受益于此，如果没有按照正确方式去做，webpack 会给出警告。
 
